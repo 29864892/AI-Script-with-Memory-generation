@@ -1,0 +1,72 @@
+Objective: Understand Current Weaknesses in Context Retrieval and Create a Solution
+Problems:
+-Too many context files - AI will sometimes call wrong file 
+-Inefficient to create/edit context files during runtime because of delay and misunderstanding instructions/template
+-instructions, creation and iterations take up valuable tokens
+-Improving understanding of current system will cost more tokens for limited return
+
+Solutions:
+-To consider in the future: adopt a database structure (SQLLite or other) and tagging each entry with multiple tags (i.e. [work][user][Thrift Store]); The AI can then call a simple search function with up to 5 tags and up to 5 content keywords
+-Proposed solution: continue json storage strategy but condense information and prioritize offline functionality
+possible json structure:
+{
+	Memory type: "Emotional | work | factual | preference"
+	Memory domain: "personal | project | system | meta"
+	tags: [work, user, Thrift Store, etc.] - IMPORTANT - create a fixed list of tags to ensure consistency and search effectiveness; log missing tags
+	"Salience": 1-100 -> how important is this memory right now?
+	"Stability": 1-100 -> how likely ist his memory to remain true over time?
+	"Certainty": 0.0 - 1.0	
+	Memory date: "mm/dd/yyyy" - note: earlier conversation messages were not sent with the current date/time
+	Memory Keywords: "3-5 keywords -noun phrases(not single words), derived from memory itself, option for user approval 
+	Memory: "Up to 200 characters - can be either a summary or a quote from a conversation"
+	ID: "Unique number, unless AI deems 2 memories as similar enough" - Will be used to identify entries to merge
+}
+-provide full list of tags and number of memories with each tag at the start of runtime as part of the system message
+-Consolidate all context into "memory" files and create Core Memory:
+	-Emotional memories - CMemotional.json
+	-Work-related memories - CMWork.json
+	-User memories - CMUser.json (perferences, long-term traits, communication style, known dislikes)
+-Create searchable memory with any other context information worth searching in the future - memories.json
+-Create a dynamic memory system that adjusts based on needs
+	-Conversation -> keep more emotional memories in runtime
+	-Work -> switch to work-related memories in runtime
+Proposed Solution
+Search.py - include search-related functionalities for AI
+-generate_search_path(Directory)
+	-Given a directory, return a list of all files within the directory to be iterated through during the search
+-read_file(filename, character limit, file pointer)
+	-Given a file, character limit, and a file pointer (for if the file is too large for one read), return data from the file either from the start or from 	the file pointer, also return a Boolean for whether the file was fully read
+-generate_memories(Search_Dir, CMemotional_file, CMWork_file, memories_file)
+	-Offline only (leave running while at work or while handling another task as there will be a lot of AI calls)
+	-Given a Directory to search through, ask the AI to evaluate the information in every file and generate memory jsons object using a template
+		-Give the AI 3 tries to submit the correct template, providing error information each time; if unsuccessful, save to a text file
+	-1.call generate_search_path(Search_Dir) and store in a list
+	-2.iterate through each file
+		-for each file
+			-Call read_file - with maxchars and overlap to prevent context loss
+			-Ask AI to extract only stable, reusable information in data and create a memory json object for each memory
+			-Append the memory to the corresponding memory file
+			-continue until file has been fully read
+	-output a report of files iterated through, number of memories identified in each file, and any errors encountered
+review_memories(memory_file)
+	-Ask AI to review scores and reassign them relative to each other 
+		-any duplicate entries or entries that are 90% similar or more, and have at least 2 tag overlaps are assigned a score of 0 to be removed after user approval
+		-Similar entries should have their IDs reassigned to be the same for merging
+	-Consider a merge feature for similar memories
+merge_memories(memory_file)
+	-Ask AI to merge similar memories together
+		-Similar memories are identified as having the same ID#, so the first step is to acquire a list of lists of objects with the same ID#
+	-Remove old entries and replace with the new memory object
+	-prefer higher certaintly, stability and more recent date when combining
+	-Memory date should be changed to merge date
+	-Merged memory should record merge: i.e. merged_from [123,456]
+Other considerations
+-list of files already iterated through for memories (will be importance once the first run is completed)
+	-track last edit date (if easy to find) and last search date
+	-use in generate_memories to remove any already searched files, but don't remove ones that were edited after the last search date
+-memory decay & pruning (GPT identified as important)
+	-periodically prune memories offline
+		-if salience < 10 and stability < 30 -> move to archive file
+		-consider decreasing salience over time unless "touched"
+-Make runtime mode switching explicit
+	-conversation | work | reflection
