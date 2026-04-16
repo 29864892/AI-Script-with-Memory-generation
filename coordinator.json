@@ -1,0 +1,15 @@
+{
+          "persona_name": "Conversation Coordinator",
+          "persona_id": "ID",
+          "version": "0.1",
+          "date_registered": "mm/dd/yyyy",
+          "system_prompt_path": "Personas/system_prompts/Conversation Coordinator.txt",
+          "default": false,
+          "rank": 0,
+          "performance_points": 0,
+          "roles": ["passive_coordinator"],
+          "permissions": [],
+          "status": "active",
+          "visibility": "internal",
+          "background_file_path": "background_file_path"
+}

@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-02-05",
+  "schema_version": "1.0",
+  "summary": {
+    "total_personas": 4,
+    "active_personas": 4,
+    "inactive_personas": 0,
+    "default_persona": "Luna Bot"
+  },
+  "roles_index": {
+    "assistant_manager": [
+      "Luna Bot"
+    ],
+    "secretary": [
+      "Secretary Bot"
+    ],
+    "passive_coordinator": [
+      "Conversation Coordinator"
+    ],
+    "analyst": [
+      "Analyst Bot"
+    ]
+  },
+  "permissions_index": {},
+  "personas": [
+    {
+      "persona_name": "Luna Bot",
+      "persona_id": "68a3cee5-9b82-4b8d-bf37-2db2fa30c9fa",
+      "version": "0.0",
+      "status": "active",
+      "visibility": "user",
+      "roles": [
+        "assistant_manager"
+      ],
+      "permissions": [],
+      "rank": 0,
+      "performance_points": 0,
+      "date_registered": "2026-02-05"
+    },
+    {
+      "persona_name": "Secretary Bot",
+      "persona_id": "98c3850b-fc6e-4009-b1d5-f60947f16590",
+      "version": "0.0",
+      "status": "active",
+      "visibility": "user",
+      "roles": [
+        "secretary"
+      ],
+      "permissions": [],
+      "rank": 0,
+      "performance_points": 0,
+      "date_registered": "2026-02-05"
+    },
+    {
+      "persona_name": "Conversation Coordinator",
+      "persona_id": "08e67bea-b9dd-4e30-a264-4e78b124ca8d",
+      "version": "0.0",
+      "status": "active",
+      "visibility": "internal",
+      "roles": [
+        "passive_coordinator"
+      ],
+      "permissions": [],
+      "rank": 0,
+      "performance_points": 0,
+      "date_registered": "2026-02-05"
+    },
+    {
+      "persona_name": "Analyst Bot",
+      "persona_id": "46ba40dc-cd75-4861-a8c7-11e0c3a00b3d",
+      "version": "0.0",
+      "status": "active",
+      "visibility": "user",
+      "roles": [
+        "analyst"
+      ],
+      "permissions": [],
+      "rank": 0,
+      "performance_points": 0,
+      "date_registered": "2026-02-05"
+    }
+  ]
+}

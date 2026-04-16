@@ -1,0 +1,70 @@
+{
+  "68a3cee5-9b82-4b8d-bf37-2db2fa30c9fa": {
+    "persona_name": "Luna Bot",
+    "persona_id": "68a3cee5-9b82-4b8d-bf37-2db2fa30c9fa",
+    "version": "0.0",
+    "date_registered": "2026-02-05",
+    "system_prompt_path": "Demo1/Personas/Luna Bot.txt",
+    "default": true,
+    "rank": 0,
+    "performance_points": 0,
+    "roles": [
+      "assistant_manager"
+    ],
+    "permissions": [],
+    "status": "active",
+    "visibility": "user",
+    "background_file_path": ""
+  },
+  "98c3850b-fc6e-4009-b1d5-f60947f16590": {
+    "persona_name": "Secretary Bot",
+    "persona_id": "98c3850b-fc6e-4009-b1d5-f60947f16590",
+    "version": "0.0",
+    "date_registered": "2026-02-05",
+    "system_prompt_path": "Demo1/Personas/Secretary Bot.txt",
+    "default": false,
+    "rank": 0,
+    "performance_points": 0,
+    "roles": [
+      "secretary"
+    ],
+    "permissions": [],
+    "status": "active",
+    "visibility": "user",
+    "background_file_path": ""
+  },
+  "08e67bea-b9dd-4e30-a264-4e78b124ca8d": {
+    "persona_name": "Conversation Coordinator",
+    "persona_id": "08e67bea-b9dd-4e30-a264-4e78b124ca8d",
+    "version": "0.0",
+    "date_registered": "2026-02-05",
+    "system_prompt_path": "Personas/system_prompts/Conversation Coordinator.txt",
+    "default": false,
+    "rank": 0,
+    "performance_points": 0,
+    "roles": [
+      "passive_coordinator"
+    ],
+    "permissions": [],
+    "status": "active",
+    "visibility": "internal",
+    "background_file_path": "background_file_path"
+  },
+  "46ba40dc-cd75-4861-a8c7-11e0c3a00b3d": {
+    "persona_name": "Analyst Bot",
+    "persona_id": "46ba40dc-cd75-4861-a8c7-11e0c3a00b3d",
+    "version": "0.0",
+    "date_registered": "2026-02-05",
+    "system_prompt_path": "Demo1/Personas/Analyst Persona.txt",
+    "default": false,
+    "rank": 0,
+    "performance_points": 0,
+    "roles": [
+      "analyst"
+    ],
+    "permissions": [],
+    "status": "active",
+    "visibility": "user",
+    "background_file_path": ""
+  }
+}

@@ -1,0 +1,68 @@
+[
+{
+    "id": 3,
+    "schema_version": "1.0",
+    "memory_type": "factual",
+    "memory_domain": "work",
+    "primary_tag": "thrift_store",
+    "tags": [
+      "donations"
+    ],
+    "owner": "Luna Bot",
+    "origin": "user",
+    "shared": true,
+    "salience": 80,
+    "stability": 95,
+    "certainty": 1.0,
+    "memory_date": "2026-02-05",
+    "keywords": [
+      "donation hours"
+    ],
+    "content": "Donations are 10:00am - 4:00pm",
+    "merged_from": []
+  },
+  {
+    "id": 1,
+    "schema_version": "1.0",
+    "memory_type": "user",
+    "memory_domain": "work",
+    "primary_tag": "preference",
+    "tags": [
+      "preference"
+    ],
+    "owner": "Secretary Bot",
+    "origin": "assistant",
+    "shared": true,
+    "salience": 70,
+    "stability": 85,
+    "certainty": 0.95,
+    "memory_date": "2026-02-05",
+    "keywords": [
+      "Notes", "Note taking", "User"
+    ],
+    "content": "User prefers detailed notes for their reference",
+    "merged_from": []
+  },
+  {
+    "id": 2,
+    "schema_version": "1.0",
+    "memory_type": "factual",
+    "memory_domain": "work",
+    "primary_tag": "thrift_store",
+    "tags": [
+      "Sales"
+    ],
+    "owner": "Analyst Bot",
+    "origin": "assistant",
+    "shared": true,
+    "salience": 85,
+    "stability": 90,
+    "certainty": 0.95,
+    "memory_date": "2026-02-05",
+    "keywords": [
+      "Sales trends", "Assist user"
+    ],
+    "content": "Analyst bot can assist user with identifying sales trends if given proper information",
+    "merged_from": []
+  }
+]

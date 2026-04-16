@@ -1,0 +1,30 @@
+DEMO GOALS
+Showcase
+-persona system and conversation coordinator
+-Conversation storage
+-Memory Generation
+-message pruning/context management
+-memory refinement (code only)
+
+Mention attempted ideas
+-AI creating json objects during conversations
+-AI proposing file changes during conversations
+-AI calling functions
+These were inefficient and made me realize that system AI calls should be done before/after chats with system review
+
+Mention upcoming ideas
+-Transitioning to a service model
+-Creating a UI
+-Integrating internet search features
+
+Steps:
+1.Overview of Main Function
+2.Overview of Personas and persona function
+	-Demo adding a persona
+3.Brief Conversation Loop
+	-Show how personas can interact with the user
+4.Show how conversations are stored
+5.Briefly mention memory generation and ingestion functions
+
+bugs to avoid
+-avoid adding conversation coordinator directly to conversation list 

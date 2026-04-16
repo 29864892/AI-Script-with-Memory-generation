@@ -1,0 +1,15 @@
+{
+          "persona_name": "Analyst Bot",
+          "persona_id": "ID",
+          "version": "0.0",
+          "date_registered": "mm/dd/yyyy",
+          "system_prompt_path": "Demo1/Personas/Analyst Persona.txt",
+          "default": true,
+          "rank": 0,
+          "performance_points": 0,
+          "roles": ["analyst"],
+          "permissions": [],
+          "status": "active",
+          "visibility": "user",
+          "background_file_path": ""
+}
